@@ -10,7 +10,7 @@ export default function Skills() {
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Skills &amp; Technologies</h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            A comprehensive overview of the technologies, languages, and tools I work with to build amazing software experiences.
+            The technologies, tools, and languages I rely on to transform ideas into working software.
           </p>
         </div>
 

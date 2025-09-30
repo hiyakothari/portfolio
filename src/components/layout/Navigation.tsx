@@ -1,8 +1,9 @@
-
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Navigation() {
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     { path: '/', label: 'Home' },
@@ -20,7 +21,8 @@ export default function Navigation() {
             Hiya Kothari
           </Link>
           
-          <div className="flex space-x-8">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -35,7 +37,35 @@ export default function Navigation() {
               </Link>
             ))}
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-slate-600 hover:text-slate-900"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <i className={`text-2xl ${isMenuOpen ? 'ri-close-line' : 'ri-menu-line'}`}></i>
+          </button>
         </nav>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 space-y-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={`block transition-colors cursor-pointer font-medium px-4 py-3 rounded-lg ${
+                  location.pathname === item.path
+                    ? 'text-purple-600 bg-purple-50'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </header>
   );

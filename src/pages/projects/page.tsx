@@ -48,7 +48,7 @@ export default function Projects() {
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">My Projects</h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            A collection of projects I've been working on. From web applications to open source contributions, here's what keeps me busy.
+            A showcase of the projects I have built — turning ideas into real-world software solutions.
           </p>
         </div>
 
